@@ -57,4 +57,9 @@ public class ProductController {
         return new ApiResponse<>(prods.size(),prods);
     }
 
+    @GetMapping(value = "/search/{key}")
+    public ApiResponse<List<Product>> getProductBySearchKey(@PathVariable String key){
+        List<Product> products = productService.searchByKeyword(key);
+        return new ApiResponse<>(products.size(),products);
+    }
 }

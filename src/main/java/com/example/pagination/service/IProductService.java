@@ -10,4 +10,5 @@ public interface IProductService {
     List<Product> findProductWithSorting(String field,String sortDirection);
     Page<Product> findProdcutWithPagination(int offset,int pageSize);
     Page<Product> findProductWithPaginationAndSorting(int offset,int pageSize,String field,String order);
+    List<Product> searchByKeyword(String key);
 }

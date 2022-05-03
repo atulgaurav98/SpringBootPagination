@@ -58,5 +58,10 @@ public class ProductServiceImpl implements IProductService {
             return productDao.findAll(PageRequest.of(offset,pageSize).withSort(Sort.by(Sort.Direction.ASC,field)));
     }
 
+    @Override
+    public List<Product> searchByKeyword(String key) {
+        return productDao.findAllByKey(key);
+    }
+
 
 }
